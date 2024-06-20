@@ -1,0 +1,236 @@
+<ul class="copy-codes-item-container">
+    <li>
+        <div class="code-example-image-preview">
+            <a class="open-simple"><img src="https://spponeimages.azureedge.net/prod/675425bc-4ab5-426a-a7fb-552342391019preview-simple-popup.png?v=0"></a>
+        </div>
+        <div class="code-example-name-description">
+            <h1>"Simple" Modal Popup</h1>
+            <h3>Features</h3>
+            <ul>
+                <li>Date Range</li>
+                <li>Sets Cookie</li>
+                <li>Internal & External linking</li>
+            </ul>
+        </div>
+        <div class="code-example-buttons">
+            <button class="open-simple btn-preview">Preview</button>
+            <button class="btn-grabcode" onclick="window.open('https://raw.githubusercontent.com/whereswalden/copycodes/main/popup-simple.html')">Copy Code </button>
+        </div>
+    </li>
+</ul>
+
+<style>
+    ul.copy-codes-item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
+}
+
+.copy-codes-item-container > li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid #1B6CE0;
+  border-radius: 8px;
+}
+
+.code-example-image-preview {
+  position: relative;
+}
+
+.code-example-image-preview a {
+	cursor: pointer;
+	height: 100%;
+	position: relative;
+	background: #333;
+	width: 100%;
+	display: flex;
+}
+
+.code-example-image-preview a::after {
+  content: 'Preview';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid white;
+  outline-offset: -20px;
+  color: white;
+  font-size: 3rem;
+  opacity: 0;
+}
+
+.code-example-image-preview img {
+  width: 100%;
+  position: relative;
+  opacity: 1;
+}
+
+.code-example-image-preview a:hover::after {
+    opacity: 1;
+}
+.code-example-image-preview a:hover img {
+    opacity: .2;
+}
+
+.code-example-name-description h3, .code-example-name-description li {
+  margin-left: 1rem;
+}
+
+.code-example-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.code-example-buttons button {
+	border-radius: 6px;
+}
+
+</style>
+
+<!-- Simple Popup - For Display Purposes Only -->
+
+<div id="simpleModal" class="time-check modal fade" role="dialog" data-show="true" tabindex="-1">
+    <div class="modal-holder">
+        <button type="button" class="modal-dismiss-btn" data-dismiss="modal">&times;</button>
+        <div class="modal-content-simple">
+            <div class="modal-image-simple">
+                <a href="../category/11837/" data-dismiss="modal"><img
+                        id="simpleImage"
+                        src="https://spponeimages.azureedge.net/prod/93b39452-f094-4972-a5dd-109c9e224433bod-popup-2.png?v=0"></a>
+            </div>
+        </div>
+        <button type="button" class="modal-dismiss-btn-text-simple" data-dismiss="modal">Close this window</button>
+
+    </div>
+</div>
+ 
+<style>
+    #simpleModal .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+    #simpleModal .fade {
+        opacity: 0;
+        -webkit-transition: opacity .15s linear;
+        -o-transition: opacity .15s linear;
+        transition: opacity .15s linear;
+    }
+
+    #simpleModal .modal-holder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        text-align: center !important;
+        display: grid;
+        width: calc(100% - 1rem);
+    }
+
+    @media screen and (min-width: 500px) {
+        #simpleModal .modal-holder {
+            width: unset;
+        }
+
+        #simpleModal .modal-image-simple a {
+            max-height: 600px;
+        }
+    }
+
+    #simpleModal .modal-content-simple {
+        background-color: #1b6bde;
+    }
+
+    #simpleModal .modal-image-simple {
+        position: relative;
+    }
+
+    #simpleModal .modal-image-simple a {
+        position: relative;
+        max-height: 600px;
+        display: flex;
+    }
+
+    #simpleModal .modal-image-simple img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    .modal-image-simple a {
+        color: #fff;
+    }
+
+    #simpleModal .btn-primary {
+        margin: 2rem auto 0;
+    }
+
+    #simpleModal .modal-dismiss-btn-text-simple {
+        color: #ddd;
+        text-decoration: underline;
+        border: 0;
+        outline: 0;
+        margin: 0 auto;
+        padding: 8px 0;
+    }
+
+    #simpleModal .modal-dismiss-btn-text-simple:hover {
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #simpleModal .modal-dismiss-btn {
+        width: 48px;
+        aspect-ratio: 1;
+        background-color: #FF693C;
+        color: lightgray;
+        text-align: center;
+        font-size: 3em;
+        padding: 5px;
+        margin: 0 0 0 auto;
+        border: 0;
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+    }
+
+    #simpleModal .modal-dismiss-btn:hover {
+        width: 48px;
+        aspect-ratio: 1;
+        background-color: #015794;
+        color: white;
+        text-align: center;
+        font-size: 3em;
+        padding: 5px;
+        margin: 0 0 0 auto;
+        border: 0;
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    // <![CDATA[
+    $(document).ready(function () {
+        $('.open-simple').click(function(){
+            $('#simpleModal').modal('show');
+        });
+    });
+    // ]]>
+</script>
+
+<!-- Simple Popup - For Display Purposes Only -->

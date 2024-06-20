@@ -1,0 +1,205 @@
+<!-- Simple Popup-->
+
+<div id="simpleModal" class="time-check modal fade" role="dialog" data-show="true" tabindex="-1">
+    <div class="modal-holder">
+        <button type="button" class="modal-dismiss-btn" data-dismiss="modal">&times;</button>
+        <div class="modal-content-simple">
+            <div class="modal-image-simple">
+                <a href="../category/11837/" data-dismiss="modal" onclick="AcceptedModal('../category/11837/')"><img
+                        id="simpleImage"
+                        src="https://spponeimages.azureedge.net/prod/93b39452-f094-4972-a5dd-109c9e224433bod-popup-2.png?v=0"></a>
+            </div>
+        </div>
+        <button type="button" class="modal-dismiss-btn-text-simple" data-dismiss="modal">Close this window</button>
+
+    </div>
+</div>
+
+
+<style>
+    #simpleModal .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+    #simpleModal .fade {
+        opacity: 0;
+        -webkit-transition: opacity .15s linear;
+        -o-transition: opacity .15s linear;
+        transition: opacity .15s linear;
+    }
+
+    #simpleModal .modal-holder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        text-align: center !important;
+        display: grid;
+        width: calc(100% - 1rem);
+    }
+
+    @media screen and (min-width: 500px) {
+        #simpleModal .modal-holder {
+            width: unset;
+        }
+
+        #simpleModal .modal-image-simple a {
+            max-height: 600px;
+        }
+    }
+
+    #simpleModal .modal-content-simple {
+        background-color: #1b6bde;
+    }
+
+    #simpleModal .modal-image-simple {
+        position: relative;
+    }
+
+    #simpleModal .modal-image-simple a {
+        position: relative;
+        max-height: 600px;
+        display: flex;
+    }
+
+    #simpleModal .modal-image-simple img {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    .modal-image-simple a {
+        color: #fff;
+    }
+
+    #simpleModal .btn-primary {
+        margin: 2rem auto 0;
+    }
+
+    #simpleModal .modal-dismiss-btn-text-simple {
+        color: #ddd;
+        text-decoration: underline;
+        border: 0;
+        outline: 0;
+        margin: 0 auto;
+        padding: 8px 0;
+    }
+
+    #simpleModal .modal-dismiss-btn-text-simple:hover {
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #simpleModal .modal-dismiss-btn {
+        width: 48px;
+        aspect-ratio: 1;
+        background-color: #FF693C;
+        color: lightgray;
+        text-align: center;
+        font-size: 3em;
+        padding: 5px;
+        margin: 0 0 0 auto;
+        border: 0;
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+    }
+
+    #simpleModal .modal-dismiss-btn:hover {
+        width: 48px;
+        aspect-ratio: 1;
+        background-color: #015794;
+        color: white;
+        text-align: center;
+        font-size: 3em;
+        padding: 5px;
+        margin: 0 0 0 auto;
+        border: 0;
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    // <![CDATA[
+    function isWithinRangeSimple(dateFrom, dateStart) {
+
+        var dateFrom = "05/14/2024";
+        var dateTo = "06/16/2024";
+
+        const dateCheck = new Date();
+        const dateString = dateCheck.toLocaleDateString();
+        var d1 = dateFrom.split("/");
+        var d2 = dateTo.split("/");
+        var c = dateString.split("/");
+
+        if (c[0] < 10) {
+            var g = c[0];
+            c[0] = '0' + g
+        }
+        if (c[1] < 10) {
+            var e = c[1];
+            c[1] = '0' + e
+        }
+
+        var from = new Date(d1[2], parseInt(d1[0]) - 1, d1[1]);
+        // -1 because months are from 0 to 11
+        console.log("from: " + from);
+
+        var to = new Date(d2[2], parseInt(d2[0]) - 1, d2[1]);
+        console.log("to: " + to);
+
+        var check = new Date(c[2], parseInt(c[0]) - 1, c[1]);
+        console.log("check: " + check);
+
+
+        // Check if it falls within the range
+        if (check >= from && check <= to) {
+            return true;
+        }
+
+        return false;
+    }
+
+    const checkDay = document.querySelector('.time-check');
+
+
+    if (isWithinRangeSimple()) {
+        checkDay.classList.add('valid-date');
+    }
+
+    $(document).ready(function () {
+        if (sessionStorage.getItem("simpleModalAccepted") ===
+            null && $("#simpleModal").hasClass("valid-date")
+        ) { // If user has not accepted the policy before and it is within range
+            $('#simpleModal').modal('show');
+        }
+    });
+
+
+    function AcceptedModal(location) {
+        let currentPolicyDate = new Date();
+        currentPolicyDate = JSON.stringify(currentPolicyDate); // Convert to json
+        sessionStorage.setItem("simpleModalAccepted", currentPolicyDate); // Store in session
+        if (location) {
+            window.location.href = location;
+        }
+        // window.open('https://hrblockspring2024.sppone.corpmerchandise.com/', "_blank");
+    };
+
+    // ]]>
+</script>
+
+<!-- END Simple Popup -->
